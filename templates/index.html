@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      div {
+      display: inline-block;
+      width: 320px;
+      vertical-align: top;
+      }
+    </style>
+  </head>
+  <body>
+  <h1>GuardiCore corrupted links</h1>
+  <div>
+    Corrupt Links
+    <ul>
+      {% for item in corrupt_links %}
+      <li><a href="{{- item }}">{{ item }}</a> </li>
+      {% endfor %}
+    </ul>
+  </div>
+  <div>
+    Links Depth
+    <ul>
+      {% for url, depth in links_depth.items() %}
+      <li><a href="{{- url }}">{{ url }}</a> : <b>{{ depth }}</b> </li>
+      {% endfor %}
+    </ul>
+  </div>
+  </body>
+</html>
